@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Bibliotek/Bibliotek.iml" filepath="$PROJECT_DIR$/Bibliotek/Bibliotek.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BookExample/BookExample.iml" filepath="$PROJECT_DIR$/BookExample/BookExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
     </modules>
   </component>
