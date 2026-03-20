@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BookController {
     BookRepository bookRepository = new BookRepository();
-
+    BookService bookService = new BookService();
     Scanner scanner = new Scanner(System.in);
 
 
@@ -25,7 +25,7 @@ public class BookController {
             int choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    ArrayList<Book> books = bookRepository.getAllBooks();
+                    ArrayList<Book> books = bookService.getAllBooks();
                     for(Book b : books){
                         System.out.println(b.toString());
                     }
