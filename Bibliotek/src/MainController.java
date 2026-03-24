@@ -14,6 +14,7 @@ public class MainController {
                 System.out.println("----BiblioteksSystem740----");
                 System.out.println("1. BookSystem");
                 System.out.println("2. MemberSystem");
+                System.out.println("3. LoanSystem");
                 System.out.println("0. Exit");
                 int choice = scanner.nextInt();
                 switch (choice){
@@ -28,6 +29,8 @@ public class MainController {
                         break;
 
                     case 3:
+                        LoanController LoanController = new LoanController();
+                        LoanController.showLoanMenu();
                         break;
                     case 4:
                     case 5:

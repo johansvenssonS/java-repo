@@ -5,11 +5,21 @@ public class Loan {
     private int bookId;
     private int memberId;
     private Date loanDate;
-    private String dueDate;
-    private String returnDate;
+    private Date dueDate;
+    private Date returnDate;
     private String status;
 
-    public Loan(int bookId, int memberId, Date loanDate, String dueDate, String status) {
+    public Loan(int id, int bookId, Date returnDate, String status, Date dueDate, Date loanDate, int memberId) {
+        this.id = id;
+        this.bookId = bookId;
+        this.returnDate = returnDate;
+        this.status = status;
+        this.dueDate = dueDate;
+        this.loanDate = loanDate;
+        this.memberId = memberId;
+    }
+
+    public Loan(int bookId, int memberId, Date loanDate, Date dueDate, String status) {
         this.bookId = bookId;
         this.memberId = memberId;
         this.loanDate = loanDate;
@@ -28,7 +38,7 @@ public class Loan {
         return memberId;
     }
 
-    public String getDueDate() {
+    public Date getDueDate() {
         return dueDate;
     }
 
@@ -36,14 +46,14 @@ public class Loan {
         return loanDate;
     }
 
-    public String getReturnDate() {
+    public Date getReturnDate() {
         return returnDate;
     }
 
     public String getStatus() {
         return status;
     }
-    public void setReturnDate(String returnDate) {
+    public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
     }
 
