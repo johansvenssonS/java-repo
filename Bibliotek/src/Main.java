@@ -3,8 +3,8 @@
 public class Main {
     public static void main(String[] args){
 
-        BookController bookController = new BookController();
-        bookController.showBookMenu();
+        MainController mainController = new MainController();
+        mainController.showMainMenu();
         //Userinterface userinterface = new Userinterface();
         //userinterface.userinterface();
     }
