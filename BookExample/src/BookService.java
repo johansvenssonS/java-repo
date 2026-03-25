@@ -6,4 +6,16 @@ public class BookService {
     public ArrayList<Book> getAllBooks(){
         return bookRepository.getAllBooks();
     }
+
+
+
+    public ArrayList<BookDTO> getAllBookTitlesAndSummaries(){
+        ArrayList<Book> books = bookRepository.getAllBooks();
+        ArrayList<BookDTO> bookDTOs = new ArrayList<>();
+        for(Book book: books){
+            bookDTOs.add(BookDTO.mapToDto(book));
+
+        }
+        return bookDTOs;
+    }
 }
