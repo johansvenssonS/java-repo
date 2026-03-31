@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Member {
+public class Member implements TableRow {
     /// Enum
     public enum MembershipType {
         STANDARD,
@@ -86,6 +86,16 @@ public class Member {
                 ", status=" + status +
                 '}';
     }
-
-
+    @Override
+    public  String[] getColumnNamn(){
+        return new String[]{"ID", "Förnamn", "Efternamn",
+                 "Email","Medlemsdatum", "Medlemstyp", "Status"};
+    }
+    @Override
+    public Object[] toRow() {
+        return new Object[]{
+                getId(), getFirstname(), getLastName(),getEmail(), getMembership_date(),
+                getMembership_type(), getStatus()
+        };
+    }
 }

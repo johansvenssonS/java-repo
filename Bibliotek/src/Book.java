@@ -1,4 +1,4 @@
-public class Book {
+public class Book implements TableRow {
     private String title;
     private int yearPublished;
     private int availableCopies;
@@ -84,5 +84,18 @@ public class Book {
                 ", pageCount=" + pageCount +
                 ", author='" + author + '\'' +
                 '}';
+    }
+
+    @Override
+    public  String[] getColumnNamn(){
+        return new String[]{"Titel", "Publicerad", "Tillgängliga",
+        "Sammanfattning", "Språk", "Sidor", "Författare"};
+    }
+    @Override
+    public Object[] toRow(){
+        return new Object[]{
+                getTitle(), getYearPublished(),getAvailableCopies(),getSummary(),
+                getLanguage(),getPageCount(),getAuthor()
+        };
     }
 }

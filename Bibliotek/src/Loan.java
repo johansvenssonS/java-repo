@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Loan {
+public class Loan implements TableRow {
     private int id;
     private int bookId;
     private int memberId;
@@ -69,5 +69,17 @@ public class Loan {
                 ", memberId=" + memberId +
                 ", status='" + status + '\'' +
                 '}';
+    }
+    @Override
+    public  String[] getColumnNamn(){
+        return new String[]{"Lån-id", "Bok-id", "Member-id",
+                "Utlåningsdatum", "Inlämingsdatum", "Inlämnatdatum", "Status"};
+    }
+    @Override
+    public Object[] toRow(){
+        return new Object[]{
+                getId(), getBookId(),getMemberId(),getLoanDate(),
+                getDueDate(),getReturnDate(),getStatus()
+        };
     }
 }
