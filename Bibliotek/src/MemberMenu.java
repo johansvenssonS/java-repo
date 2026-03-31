@@ -18,7 +18,7 @@ public class MemberMenu extends MenuBar {
     protected void buildMenu(){
         addButton("Alla medlemar", () -> userinterface.createTable(memberService.getAllMembers()));
         //text fält för att söka efter medlem
-        textField = new JTextField(20);
+        textField = new JTextField("Sök medlem...",20);
         //appenchild till Jpanel panel som är ett attribut kopplat till MenuBar
         panel.add(textField);
         //createtable i ui tar bara emot arraylist
@@ -32,6 +32,7 @@ public class MemberMenu extends MenuBar {
             }//ful lösning
             userinterface.createTable(userArray);
         });
+        addButton("Skapa ny medlem", () -> userinterface.createInputWindow(new NewMemberForm(memberService)));
 
         //Bygger upp knappar med deras namn och vad som ska hända om man klickar.
         //addButton("Alla böcker", () -> userinterface.createTable(bookService.getAllBooks()));

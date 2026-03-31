@@ -62,11 +62,14 @@ public class Userinterface {
         }
 
     }
+    //Generell metod för att skapa tabell
+    //tar emot arraylist ifrån med ett interface som styr vad som efterfrågas.
     public void createTable(ArrayList<?extends TableRow> rows){
-
+        //Hämta specifika kolumnnamn ifrån books,members,loans
         String[] columnNames = rows.get(0).getColumnNamn();
-
+        //bygger ny tabell default model, med satta rubriker på kolumner
         tableModel = new DefaultTableModel(columnNames, 0);
+        //lägger till en rad i tabellen
         for(TableRow row : rows){
             tableModel.addRow(row.toRow());
         }
@@ -79,6 +82,24 @@ public class Userinterface {
         tabelParent = new JScrollPane(table);
         frame.add(tabelParent, BorderLayout.CENTER);
         rerender();
+
+    }
+    //generell metod för att skapa input fönster
+    public void createInputWindow(InputForm form){
+        JDialog popUp = new JDialog(frame, form.getTitle(), true);
+        popUp.setSize(400, 300);
+        JPanel content = new JPanel();
+        content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+        content.add(form.buildForm());
+
+        JButton submitBtn = new JButton("Skicka");
+        submitBtn.addActionListener(e -> {
+            form.sendForm();
+            popUp.dispose();
+        });
+        content.add(submitBtn);
+        popUp.add(content);
+        popUp.setVisible(true);
 
     }
 

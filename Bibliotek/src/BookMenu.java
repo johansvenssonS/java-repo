@@ -17,13 +17,15 @@ public class BookMenu extends MenuBar {
     @Override
     protected void buildMenu(){
         //text fält för att söka på bok
-        textField = new JTextField(20);
-        //appenchild till Jpanel panel som är ett attribut kopplat till MenuBar
-        panel.add(textField);
+
         //Bygger upp knappar med deras namn och vad som ska hända om man klickar.
-        addButton("Sök bok", () -> userinterface.createTable(bookService.searchBooks(textField.getText())));
         addButton("Tillgängliga böcker", () -> userinterface.createTable(bookService.getAvailableBooks()));
         addButton("Alla böcker", () -> userinterface.createTable(bookService.getAllBooks()));
+        textField = new JTextField("Sök bok...",20);
+        //appenchild till Jpanel panel som är ett attribut kopplat till MenuBar
+        panel.add(textField);
+        addButton("Sök bok", () -> userinterface.createTable(bookService.searchBooks(textField.getText())));
+
         addButton("X", () -> userinterface.clearTable());
     }
 }
