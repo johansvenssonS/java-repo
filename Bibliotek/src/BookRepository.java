@@ -3,11 +3,7 @@
 import java.sql.*;
 import java.util.ArrayList;
 
-public class BookRepository {
-    private final String URL = "jdbc:mysql://localhost:3307/bibliotek";
-    private final String USER = "root";
-    private final String PASSWORD = "1234";
-
+public class BookRepository extends Repository {
     public ArrayList<Book> getAllBooks(){
 
         ArrayList<Book> books = new ArrayList<>();

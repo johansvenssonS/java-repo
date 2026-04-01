@@ -2,11 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class MemberRepository {
-        private final String URL = "jdbc:mysql://localhost:3307/bibliotek";
-        private final String USER = "root";
-        private final String PASSWORD = "1234";
-
+public class MemberRepository extends Repository {
         public ArrayList<Member> getAllMembers(){
 
             ArrayList<Member> members = new ArrayList<>();

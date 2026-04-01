@@ -2,11 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class LoanRepository {
-    private final String URL = "jdbc:mysql://localhost:3307/bibliotek";
-    private final String USER = "root";
-    private final String PASSWORD = "1234";
-
+public class LoanRepository extends Repository {
     public ArrayList<Loan> getAllLoans(){
 
         ArrayList<Loan> loans = new ArrayList<>();
